@@ -19,7 +19,7 @@
                     <Label for="email" value="Email" />
                     <InputIconWrapper>
                         <template #icon>
-                            <MailIcon aria-hidden="true" class="w-6 h-6" />
+                            <EnvelopeIcon aria-hidden="true" class="w-6 h-6" />
                         </template>
                         <Input with-icon id="email" type="email" class="block w-full" placeholder="Email" v-model="form.email" required />
                     </InputIconWrapper>
@@ -59,7 +59,7 @@
 
                 <div>
                     <Button class="w-full justify-center gap-2" :disabled="form.processing" v-slot="{ iconSizeClasses }">
-                        <UserAddIcon aria-hidden="true" :class="iconSizeClasses" />
+                        <UserPlusIcon aria-hidden="true" :class="iconSizeClasses" />
                         <span>Register</span>
                     </Button>
                 </div>
@@ -84,7 +84,7 @@ import Input from '@/Components/Input.vue'
 import Checkbox from '@/Components/Checkbox.vue'
 import Label from '@/Components/Label.vue'
 import ValidationErrors from '@/Components/ValidationErrors.vue'
-import { UserIcon, MailIcon, LockClosedIcon, UserAddIcon } from '@heroicons/vue/24/outline'
+import { UserIcon, EnvelopeIcon, LockClosedIcon, UserPlusIcon } from '@heroicons/vue/24/outline'
 
 const form = useForm({
     name: '',

@@ -24,7 +24,7 @@
                 v-show="!sidebarState.isOpen"  
                 :class="['hidden lg:block', iconSizeClasses]" />
 
-            <XIcon 
+            <XMarkIcon 
                 aria-hidden="true" 
                 :class="['lg:hidden', iconSizeClasses]" />
         </Button>
@@ -37,5 +37,5 @@ import { sidebarState } from '@/Composables'
 import ApplicationLogo from '@/Components/ApplicationLogo.vue'
 import Button from '@/Components/Button.vue'
 import { MenuFoldLineLeftIcon, MenuFoldLineRightIcon } from '@/Components/Icons/Outline'
-import { XIcon } from '@heroicons/vue/24/outline'
+import { XMarkIcon } from '@heroicons/vue/24/outline'
 </script>

@@ -62,7 +62,7 @@
                 class="hidden md:inline-flex"
                 srText="Toggle dark mode"
             >
-                <ArrowsExpandIcon
+                <ArrowsPointingOutIcon
                     v-show="!isFullscreen"
                     aria-hidden="true"
                     :class="iconSizeClasses"
@@ -191,7 +191,7 @@
             v-slot="{ iconSizeClasses }"
             srText="Search"
         >
-            <SearchIcon aria-hidden="true" :class="iconSizeClasses" />
+            <MagnifyingGlassIcon aria-hidden="true" :class="iconSizeClasses" />
         </Button>
 
         <Link :href="route('dashboard')">
@@ -207,12 +207,12 @@
             v-slot="{ iconSizeClasses }"
             srText="Toggle sidebar"
         >
-            <MenuIcon
+            <Bars3Icon
                 v-show="!sidebarState.isOpen"
                 aria-hidden="true"
                 :class="iconSizeClasses"
             />
-            <XIcon
+            <XMarkIcon
                 v-show="sidebarState.isOpen"
                 aria-hidden="true"
                 :class="iconSizeClasses"
@@ -228,10 +228,10 @@ import { useFullscreen } from '@vueuse/core'
 import {
     SunIcon,
     MoonIcon,
-    SearchIcon,
-    MenuIcon,
-    XIcon,
-    ArrowsExpandIcon
+    MagnifyingGlassIcon,
+    Bars3Icon,
+    XMarkIcon,
+    ArrowsPointingOutIcon
 } from '@heroicons/vue/24/outline'
 import { ArrowsInnerIcon } from '@/Components/Icons/Outline'
 import {

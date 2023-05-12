@@ -17,7 +17,7 @@
                     <Label for="email" value="Email" />
                     <InputIconWrapper>
                         <template #icon>
-                            <MailIcon aria-hidden="true" class="w-6 h-6" />
+                            <EnvelopeIcon aria-hidden="true" class="w-6 h-6" />
                         </template>
                         <Input with-icon id="email" type="email" class="block w-full" placeholder="Email" v-model="form.email" required autofocus />
                     </InputIconWrapper>
@@ -42,7 +42,7 @@ import Button from '@/Components/Button.vue'
 import Input from '@/Components/Input.vue'
 import Label from '@/Components/Label.vue'
 import ValidationErrors from '@/Components/ValidationErrors.vue'
-import { MailIcon, PaperAirplaneIcon } from '@heroicons/vue/24/outline'
+import { EnvelopeIcon, PaperAirplaneIcon } from '@heroicons/vue/24/outline'
 
 defineProps({
     status: String
