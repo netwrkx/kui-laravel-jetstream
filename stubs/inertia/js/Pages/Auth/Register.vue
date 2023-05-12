@@ -84,7 +84,7 @@ import Input from '@/Components/Input.vue'
 import Checkbox from '@/Components/Checkbox.vue'
 import Label from '@/Components/Label.vue'
 import ValidationErrors from '@/Components/ValidationErrors.vue'
-import { UserIcon, MailIcon, LockClosedIcon, UserAddIcon } from '@heroicons/vue/outline'
+import { UserIcon, MailIcon, LockClosedIcon, UserAddIcon } from '@heroicons/vue/24/outline'
 
 const form = useForm({
     name: '',

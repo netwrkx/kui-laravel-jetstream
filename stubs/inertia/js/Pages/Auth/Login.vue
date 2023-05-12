@@ -66,7 +66,7 @@ import Input from '@/Components/Input.vue'
 import Checkbox from '@/Components/Checkbox.vue'
 import Label from '@/Components/Label.vue'
 import ValidationErrors from '@/Components/ValidationErrors.vue'
-import { MailIcon, LockClosedIcon, LoginIcon } from '@heroicons/vue/outline'
+import { MailIcon, LockClosedIcon, LoginIcon } from '@heroicons/vue/24/outline'
 
 defineProps({
     canResetPassword: Boolean,

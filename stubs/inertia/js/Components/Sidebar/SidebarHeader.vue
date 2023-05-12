@@ -37,5 +37,5 @@ import { sidebarState } from '@/Composables'
 import ApplicationLogo from '@/Components/ApplicationLogo.vue'
 import Button from '@/Components/Button.vue'
 import { MenuFoldLineLeftIcon, MenuFoldLineRightIcon } from '@/Components/Icons/Outline'
-import { XIcon } from '@heroicons/vue/outline'
+import { XIcon } from '@heroicons/vue/24/outline'
 </script>

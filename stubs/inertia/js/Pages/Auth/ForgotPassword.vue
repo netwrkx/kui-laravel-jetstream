@@ -42,7 +42,7 @@ import Button from '@/Components/Button.vue'
 import Input from '@/Components/Input.vue'
 import Label from '@/Components/Label.vue'
 import ValidationErrors from '@/Components/ValidationErrors.vue'
-import { MailIcon, PaperAirplaneIcon } from '@heroicons/vue/outline'
+import { MailIcon, PaperAirplaneIcon } from '@heroicons/vue/24/outline'
 
 defineProps({
     status: String

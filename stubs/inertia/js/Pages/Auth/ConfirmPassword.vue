@@ -51,7 +51,7 @@ import InputIconWrapper from '@/Components/InputIconWrapper.vue'
 import Button from '@/Components/Button.vue'
 import Input from '@/Components/Input.vue'
 import Label from '@/Components/Label.vue'
-import { LockClosedIcon } from '@heroicons/vue/outline'
+import { LockClosedIcon } from '@heroicons/vue/24/outline'
 
 const form = useForm({
     password: '',

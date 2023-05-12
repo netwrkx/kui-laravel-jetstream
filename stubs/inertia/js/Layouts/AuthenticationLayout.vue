@@ -43,7 +43,7 @@
 
 <script setup>
 import { Link, Head } from '@inertiajs/vue3'
-import { MoonIcon, SunIcon } from '@heroicons/vue/outline'
+import { MoonIcon, SunIcon } from '@heroicons/vue/24/outline'
 import { toggleDarkMode, isDark } from '@/Composables'
 import ApplicationLogo from '@/Components/ApplicationLogo.vue'
 import PageFooter from '@/Components/PageFooter.vue'

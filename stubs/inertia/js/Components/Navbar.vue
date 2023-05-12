@@ -232,7 +232,7 @@ import {
     MenuIcon,
     XIcon,
     ArrowsExpandIcon
-} from '@heroicons/vue/outline'
+} from '@heroicons/vue/24/outline'
 import { ArrowsInnerIcon } from '@/Components/Icons/Outline'
 import {
     handleScroll,

@@ -52,7 +52,7 @@ import Button from '@/Components/Button.vue'
 import Input from '@/Components/Input.vue'
 import Label from '@/Components/Label.vue'
 import ValidationErrors from '@/Components/ValidationErrors.vue'
-import { MailIcon, LockClosedIcon } from '@heroicons/vue/outline'
+import { MailIcon, LockClosedIcon } from '@heroicons/vue/24/outline'
 
 const props = defineProps({
     email: String,

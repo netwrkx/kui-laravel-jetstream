@@ -20,5 +20,5 @@
 </template>
 
 <script setup>
-import { HeartIcon } from '@heroicons/vue/solid'
+import { HeartIcon } from '@heroicons/vue/24/solid'
 </script>

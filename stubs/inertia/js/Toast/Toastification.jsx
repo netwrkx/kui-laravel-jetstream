@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue'
-import { CheckIcon, XIcon, ExclamationIcon, QuestionMarkCircleIcon } from '@heroicons/vue/outline'
+import { CheckIcon, XIcon, ExclamationIcon, QuestionMarkCircleIcon } from '@heroicons/vue/24/outline'
 import '@/Toast/style.css'
 import Button from '@/Components/Button.vue'
 
