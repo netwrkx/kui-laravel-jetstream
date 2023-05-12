@@ -55,10 +55,6 @@ class ReplaceCommand extends Command
         if ($this->argument('stack') === 'inertia') {
             return $this->replaceInertia();
         }
-
-        if ($this->argument('stack') === 'livewire') {
-            return $this->replaceLivewire();
-        }
     }
 
     public function replaceInertia()
@@ -74,7 +70,7 @@ class ReplaceCommand extends Command
             ] + $packages;
 
             if (!$this->isVite) {
-                $extraPackages += ['@vue/babel-plugin-jsx' => '^1.1.0'];
+                
             } else {
                 $extraPackages += ['@vitejs/plugin-vue-jsx' => '^1.3.10'];
             }
@@ -100,11 +96,7 @@ class ReplaceCommand extends Command
         copy(__DIR__ . '/../../stubs/inertia/css/app.css', resource_path('css/app.css'));
 
         if(!$this->isVite) {
-            copy(__DIR__ . '/../../stubs/inertia/views/app.mix.blade.php', resource_path('views/app.blade.php'));
-            copy(__DIR__ . '/../../stubs/inertia/.babelrc', base_path('.babelrc'));
-            copy(__DIR__ . '/../../stubs/inertia/webpack.config.js', base_path('webpack.config.js'));
-            copy(__DIR__ . '/../../stubs/inertia/webpack.mix.js', base_path('webpack.mix.js'));
-            copy(__DIR__ . '/../../stubs/inertia/js/app.mix.js', resource_path('js/app.js'));
+            
         } else {
             copy(__DIR__ . '/../../stubs/inertia/views/app.vite.blade.php', resource_path('views/app.blade.php'));
             copy(__DIR__ . '/../../stubs/inertia/vite.config.js', base_path('vite.config.js'));
@@ -117,64 +109,6 @@ class ReplaceCommand extends Command
             (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/inertia/js/Teams', resource_path('js/Pages/Teams'));
         }
         
-        $this->info('Jetstream ui scaffolding replaced successfully.');
-        $this->comment('Please execute the "npm install && npm run dev" command to build your assets.');
-    }
-
-    public function replaceLivewire()
-    {
-        // NPM Packages...
-        $this->updateNodePackages(function ($packages) {
-            return [
-                '@alpinejs/collapse' => '^3.4.2',
-                'perfect-scrollbar' => '^1.5.5'
-            ] + $packages;
-        });
-
-        // Views...
-        (new Filesystem)->ensureDirectoryExists(resource_path('views/api'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('views/auth'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('views/components'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('views/layouts'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('views/profile'));
-
-        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/livewire/views/api', resource_path('views/api'));
-        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/livewire/views/auth', resource_path('views/auth'));
-        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/livewire/views/components', resource_path('views/components'));
-        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/livewire/views/profile', resource_path('views/profile'));
-
-        copy(__DIR__ . '/../../stubs/livewire/views/dashboard.blade.php', resource_path('views/dashboard.blade.php'));
-        copy(__DIR__ . '/../../stubs/livewire/views/navigation-menu.blade.php', resource_path('views/navigation-menu.blade.php'));
-        copy(__DIR__ . '/../../stubs/livewire/views/policy.blade.php', resource_path('views/policy.blade.php'));
-        copy(__DIR__ . '/../../stubs/livewire/views/terms.blade.php', resource_path('views/terms.blade.php'));
-
-        // Assets
-        copy(__DIR__ . '/../../stubs/livewire/tailwind.config.js', base_path('tailwind.config.js'));
-        copy(__DIR__ . '/../../stubs/livewire/css/app.css', resource_path('css/app.css'));
-        
-        if(!$this->isVite) {
-            copy(__DIR__ . '/../../stubs/livewire/views/layouts/app.mix.blade.php', resource_path('views/layouts/app.blade.php'));
-            copy(__DIR__ . '/../../stubs/livewire/views/layouts/guest.mix.blade.php', resource_path('views/layouts/guest.blade.php'));
-            copy(__DIR__ . '/../../stubs/livewire/views/welcome.mix.blade.php', resource_path('views/welcome.blade.php'));
-            copy(__DIR__ . '/../../stubs/livewire/webpack.mix.js', base_path('webpack.mix.js'));
-            copy(__DIR__ . '/../../stubs/livewire/js/app.mix.js', resource_path('js/app.js'));
-        } else {
-            copy(__DIR__ . '/../../stubs/livewire/views/layouts/app.vite.blade.php', resource_path('views/layouts/app.blade.php'));
-            copy(__DIR__ . '/../../stubs/livewire/views/layouts/guest.vite.blade.php', resource_path('views/layouts/guest.blade.php'));
-            copy(__DIR__ . '/../../stubs/livewire/views/welcome.vite.blade.php', resource_path('views/welcome.blade.php'));
-            copy(__DIR__ . '/../../stubs/livewire/vite.config.js', base_path('vite.config.js'));
-            copy(__DIR__ . '/../../stubs/livewire/js/app.vite.js', resource_path('js/app.js'));
-            copy(__DIR__ . '/../../stubs/common/postcss.config.js', base_path('postcss.config.js'));
-        }
-
-        if($this->option('teams')) {
-            (new Filesystem)->ensureDirectoryExists(resource_path('views/teams'));
-            (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/livewire/views/teams', resource_path('views/teams'));
-        }
-
-        // Icons
-        $this->requireComposerPackages('blade-ui-kit/blade-heroicons:^1.2');
-
         $this->info('Jetstream ui scaffolding replaced successfully.');
         $this->comment('Please execute the "npm install && npm run dev" command to build your assets.');
     }

@@ -242,8 +242,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Inertia } from '@inertiajs/inertia'
-import { useForm, usePage } from '@inertiajs/inertia-vue3'
+import { router, useForm, usePage } from '@inertiajs/vue3';
 import ActionSection from '@/Components/ActionSection.vue'
 import Button from '@/Components/Button.vue'
 import ConfirmationModal from '@/Components/ConfirmationModal.vue'
@@ -293,7 +292,7 @@ const addTeamMember = () => {
 }
 
 const cancelTeamInvitation = (invitation) => {
-    Inertia.delete(route('team-invitations.destroy', invitation), {
+    router.delete(route('team-invitations.destroy', invitation), {
         preserveScroll: true,
     })
 }
@@ -321,7 +320,7 @@ const confirmLeavingTeam = () => {
 }
 
 const leaveTeam = () => {
-    leaveTeamForm.delete(route('team-members.destroy', [props.team, usePage().props.value.user]))
+    leaveTeamForm.delete(route('team-members.destroy', [props.team, usePage().props.auth.user]))
 }
 
 const confirmTeamMemberRemoval = (teamMember) => {

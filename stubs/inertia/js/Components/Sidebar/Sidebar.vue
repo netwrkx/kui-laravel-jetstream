@@ -39,7 +39,7 @@
 
 <script setup>
 import { onMounted, Transition } from 'vue'
-import { Inertia } from '@inertiajs/inertia'
+import { router } from '@inertiajs/vue3';
 import { sidebarState } from '@/Composables'
 import SidebarHeader from '@/Components/Sidebar/SidebarHeader.vue'
 import SidebarContent from '@/Components/Sidebar/SidebarContent.vue'
@@ -48,7 +48,7 @@ import SidebarFooter from '@/Components/Sidebar/SidebarFooter.vue'
 onMounted(() => {
     window.addEventListener('resize', sidebarState.handleWindowResize)
 
-    Inertia.on('navigate', () => {
+    router.on('navigate', () => {
         if (window.innerWidth <= 1024) {
             sidebarState.isOpen = false
         }

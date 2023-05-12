@@ -141,8 +141,7 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
-import { Inertia } from '@inertiajs/inertia'
-import { useForm, usePage } from '@inertiajs/inertia-vue3'
+import { useForm, usePage, router } from '@inertiajs/vue3'
 import ActionSection from '@/Components/ActionSection.vue'
 import Input from '@/Components/Input.vue'
 import Label from '@/Components/Label.vue'
@@ -168,7 +167,7 @@ const confirmationForm = useForm({
 })
 
 const twoFactorEnabled = computed(
-    () => !enabling.value && usePage().props.value.user?.two_factor_enabled,
+    () => !enabling.value && usePage().props.auth.user?.two_factor_enabled,
 )
 
 watch(twoFactorEnabled, () => {
@@ -181,7 +180,7 @@ watch(twoFactorEnabled, () => {
 const enableTwoFactorAuthentication = () => {
     enabling.value = true
 
-    Inertia.post('/user/two-factor-authentication', {}, {
+    router.post('/user/two-factor-authentication', {}, {
         preserveScroll: true,
         onSuccess: () => Promise.all([
             showQrCode(),
@@ -239,7 +238,7 @@ const regenerateRecoveryCodes = () => {
 const disableTwoFactorAuthentication = () => {
     disabling.value = true
 
-    Inertia.delete('/user/two-factor-authentication', {
+    router.delete('/user/two-factor-authentication', {
         preserveScroll: true,
         onSuccess: () => {
             disabling.value = false
