@@ -44,7 +44,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useForm } from '@inertiajs/inertia-vue3'
+import { useForm } from '@inertiajs/vue3'
 import AuthenticationLayout from '@/Layouts/AuthenticationLayout.vue'
 import Button from '@/Components/Button.vue'
 import Input from '@/Components/Input.vue'

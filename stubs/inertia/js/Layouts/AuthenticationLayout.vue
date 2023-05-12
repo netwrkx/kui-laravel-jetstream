@@ -42,7 +42,7 @@
 </template>
 
 <script setup>
-import { Link, Head } from '@inertiajs/inertia-vue3'
+import { Link, Head } from '@inertiajs/vue3'
 import { MoonIcon, SunIcon } from '@heroicons/vue/outline'
 import { toggleDarkMode, isDark } from '@/Composables'
 import ApplicationLogo from '@/Components/ApplicationLogo.vue'

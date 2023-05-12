@@ -213,7 +213,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useForm } from '@inertiajs/inertia-vue3'
+import { useForm } from '@inertiajs/vue3'
 import ActionSection from '@/Components/ActionSection.vue'
 import Button from '@/Components/Button.vue'
 import ConfirmationModal from '@/Components/ConfirmationModal.vue'

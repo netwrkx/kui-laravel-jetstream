@@ -22,7 +22,7 @@
 
 <script setup> 
 import { computed } from 'vue'
-import { Link, useForm } from '@inertiajs/inertia-vue3'
+import { Link, useForm } from '@inertiajs/vue3'
 import AuthenticationLayout from '@/Layouts/AuthenticationLayout.vue'
 import Button from '@/Components/Button.vue'
 

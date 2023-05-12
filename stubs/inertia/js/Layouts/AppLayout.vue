@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import { Head } from '@inertiajs/inertia-vue3'
+import { Head } from '@inertiajs/vue3'
 import { sidebarState } from '@/Composables'
 import Banner from '@/Components/Banner.vue'
 import Sidebar from '@/Components/Sidebar/Sidebar.vue'
