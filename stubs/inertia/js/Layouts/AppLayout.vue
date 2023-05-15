@@ -25,10 +25,17 @@
                 </div>
             </header>
 
+            <!-- Page SubHeading -->
+            <header v-if="$slots.subheader">
+                <slot name="subheader"></slot>
+            </header>
+
             <!-- Page Content -->
             <main class="flex-1 p-4 mx-auto max-w-7xl w-full sm:p-6 lg:p-8">
                 <slot></slot>
             </main>
+
+            <SettingsPanel />
 
             <PageFooter />
         </div>
@@ -40,6 +47,7 @@ import { Head } from '@inertiajs/vue3'
 import { sidebarState } from '@/Composables'
 import Banner from '@/Components/Banner.vue'
 import Sidebar from '@/Components/Sidebar/Sidebar.vue'
+import SettingsPanel from '@/Components/Panels/SettingsPanel.vue'
 import Navbar from '@/Components/Navbar.vue'
 import PageFooter from '@/Components/PageFooter.vue'
 

@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue'
-import { CheckIcon, XMarkIcon, ExclamationIcon, QuestionMarkCircleIcon } from '@heroicons/vue/24/outline'
+import { CheckIcon, XMarkIcon, ExclamationCircleIcon, QuestionMarkCircleIcon } from '@heroicons/vue/24/outline'
 import '@/Toast/style.css'
 import Button from '@/Components/Button.vue'
 
@@ -71,7 +71,7 @@ export default defineComponent({
         Icon = CheckIcon
         break
       case 'warning':
-        Icon = ExclamationIcon
+        Icon = ExclamationCircleIcon
         break
       case 'error':
         Icon = XMarkIcon

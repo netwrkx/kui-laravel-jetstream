@@ -1,8 +1,11 @@
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
 
 export const isDark = useDark()
+export const isSearchPanelOpen = ref(false)
+export const isSettingsPanelOpen = ref(false)
 export const toggleDarkMode = useToggle(isDark)
+export const isNotificationsPanelOpen = ref(false)
 
 export const sidebarState = reactive({
     isOpen: window.innerWidth > 1024,
