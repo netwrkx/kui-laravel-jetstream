@@ -5,6 +5,7 @@ import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m'
+import { isDark } from './Composables'
 import Toast from 'vue-toastification'
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'K UI'
@@ -27,6 +28,6 @@ createInertiaApp({
             .mount(el)
     },
     progress: {
-        color: '#4B5563',
+        color: isDark ? '#FFFFFF':'#4B5563',
     },
 })
