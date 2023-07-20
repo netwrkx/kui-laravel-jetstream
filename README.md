@@ -3,18 +3,16 @@
 Different UI for [larave/jetstream](https://github.com/laravel/jetstream).
 
 [![License](https://img.shields.io/github/license/Kamona-WD/kui-laravel-jetstream)](https://github.com/Kamona-WD/kui-laravel-jetstream/blob/main/LICENSE.md)
-[![Releases](https://img.shields.io/github/release/Kamona-WD/kui-laravel-jetstream)](https://github.com/Kamona-WD/kui-laravel-jetstream/releases)
-[![Stars](https://img.shields.io/github/stars/Kamona-WD/kui-laravel-jetstream)](https://github.com/Kamona-WD/kui-laravel-jetstream/stargazers)
-[![Total Downloads](https://img.shields.io/packagist/dt/kamona/kui-laravel-jetstream.svg)](https://packagist.org/packages/kamona/kui-laravel-jetstream)
 
-#### [Breeze Version](https://github.com/Kamona-WD/kui-laravel-breeze)
-<!-- #### [Fortify Version](https://github.com/Kamona-WD/kui-laravel-fortify) -->
+#### [Kamona-WD](https://github.com/Kamona-WD/kui-laravel-jetstream)
+<!-- #### [Thanks to Kamona-WD for this great project](https://github.com/Kamona-WD/kui-laravel-jetstream) -->
 
 
 > We recommend installing this package on a project that you are starting from scratch.
 
 #### Usage
-> NOTE: It doesn't matter if you use `vitejs` or `laravel-mix`, it will work in both cases.
+> NOTE: This only works for `vitejs`. `laravel-mix` is not supported.
+> NOTE: This only works for `inertia`. `livewire` is not supported.
 1. Fresh install Laravel >= 8.0 and `cd` to your app.
 2. Install laravel/jetstream
 
@@ -23,7 +21,7 @@ composer require laravel/jetstream
 
 # after finish run this command
 
-php artisan jetstream:install livewire --teams
+php artisan jetstream:install inertia --teams
 ```
 
 3. Install kamona/kui-laravel-jetstream
@@ -34,8 +32,8 @@ composer require kamona/kui-laravel-jetstream --dev
 # after finish run this command
 
 # This package will detect if your project use vitejs or not by check if vite.config.js exist or not.
-php artisan kui-jetstream:replace livewire --teams
-# available stacks (livewire,inertia).
+php artisan kui-jetstream:replace inertia --teams
+# available stacks (inertia).
 # So if you run `php artisan jetstream:install inertia` you can run `php artisan kui-jetstream:replace inertia`
 
 # then
@@ -52,7 +50,6 @@ npm install && npm run dev # or yarn && yarn dev
 
 You will found sidebar links in:
 
-- livewire: `resources/views/components/sidebar/content.blade.php`.
 - inertia: `resources/js/Components/Sidebar/SidebarContent.vue`
 
 #### Screens
