@@ -1,5 +1,5 @@
 <template>
-    <FormSection @submitted="updateTeamName">
+    <FormSection @submitted="updateTeamName"
         <template #title>
             Team Name
         </template>

@@ -2,7 +2,7 @@
     <div>
         <div class="grid gap-10">
             <!-- Generate API Token -->
-            <FormSection @submitted="createApiToken">
+            <FormSection @submitted="createApiToken" grid-class="" col-class="">
                 <template #title> Create API Token </template>
 
                 <template #description>

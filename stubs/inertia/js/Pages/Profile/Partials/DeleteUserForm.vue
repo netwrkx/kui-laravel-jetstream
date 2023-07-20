@@ -1,5 +1,5 @@
 <template>
-    <ActionSection>
+    <ActionSection grid-class="" col-class="">
         <template #title>
             Delete Account
         </template>

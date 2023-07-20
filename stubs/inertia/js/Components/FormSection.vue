@@ -1,21 +1,27 @@
 <template>
-    <div class="grid gap-4 md:gap-6">
+    <div class="md:grid md:gap-6" :class="gridClass">
         <SectionTitle>
-            <template #title><slot name="title"></slot></template>
-            <template #description><slot name="description"></slot></template>
+            <template #title>
+                <slot name="title" />
+            </template>
+            <template #description>
+                <slot name="description" />
+            </template>
         </SectionTitle>
 
-        <div class="mt-5 md:mt-0 md:col-span-2">
+        <div class="mt-5 md:mt-0" :class="colClass">
             <form @submit.prevent="$emit('submitted')">
-                <div class="px-4 py-5 bg-white shadow-md sm:p-6 dark:bg-dark-eval-1"
-                    :class="hasActions ? 'sm:rounded-tl-md sm:rounded-tr-md' : 'sm:rounded-md'">
+                <div
+                    class="px-4 py-5 bg-white dark:bg-gray-800 sm:p-6 shadow"
+                    :class="hasActions ? 'sm:rounded-tl-md sm:rounded-tr-md' : 'sm:rounded-md'"
+                >
                     <div class="grid grid-cols-6 gap-6">
-                        <slot name="form"></slot>
+                        <slot name="form" />
                     </div>
                 </div>
 
-                <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md dark:bg-dark-eval-2" v-if="hasActions">
-                    <slot name="actions"></slot>
+                <div v-if="hasActions" class="flex items-center justify-end px-4 py-3 bg-gray-50 dark:bg-gray-800 text-right sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">
+                    <slot name="actions" />
                 </div>
             </form>
         </div>
@@ -23,14 +29,22 @@
 </template>
 
 <script setup>
-import { useSlots, computed } from 'vue'
+import { computed, useSlots } from 'vue';
 import SectionTitle from '@/Components/SectionTitle.vue'
 
-const emits = defineEmits(['submitted'])
+defineEmits(['submitted']);
 
-const slots = useSlots()
+defineProps({
+    gridClass: {
+        type: String,
+        default: 'md:grid-cols-3'
+    },
 
-const hasActions = computed(() => {
-        return !!slots.actions
-})
+    colClass: {
+        type: String,
+        default: 'md:col-span-2'
+    }
+});
+
+const hasActions = computed(() => !! useSlots().actions);
 </script>
