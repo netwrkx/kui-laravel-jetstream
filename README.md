@@ -4,6 +4,7 @@ Different UI for [larave/jetstream](https://github.com/laravel/jetstream).
 
 [![License](https://img.shields.io/github/license/Kamona-WD/kui-laravel-jetstream)](https://github.com/Kamona-WD/kui-laravel-jetstream/blob/main/LICENSE.md)
 
+> Thanks to Kamona-WD for this great project.
 #### [Kamona-WD](https://github.com/Kamona-WD/kui-laravel-jetstream)
 <!-- #### [Thanks to Kamona-WD for this great project](https://github.com/Kamona-WD/kui-laravel-jetstream) -->
 
@@ -11,8 +12,8 @@ Different UI for [larave/jetstream](https://github.com/laravel/jetstream).
 > We recommend installing this package on a project that you are starting from scratch.
 
 #### Usage
-> NOTE: This only works for `vitejs`. `laravel-mix` is not supported.
-> NOTE: This only works for `inertia`. `livewire` is not supported.
+> NOTE: This only works for `vitejs & inertia`. `laravel-mix & livewire` is not supported.
+
 1. Fresh install Laravel >= 8.0 and `cd` to your app.
 2. Install laravel/jetstream
 
