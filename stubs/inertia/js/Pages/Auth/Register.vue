@@ -1,7 +1,13 @@
 <template>
     <AuthenticationLayout title="Register">
-
         <ValidationErrors class="mb-4" />
+
+        <div class="text-center mb-6" v-if="$page.props.flash?.teamInvitation">
+            <h4>
+                Register or <a class="hover:text-purple-600" href="{{ route('login') }}">log in</a>
+                to join <strong class="text-purple-500">{{ $page.props.flash.teamInvitation }}</strong>
+            </h4>
+        </div>
 
         <form @submit.prevent="submit">
             <div class="grid gap-4">

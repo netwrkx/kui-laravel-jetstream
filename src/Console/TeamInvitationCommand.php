@@ -6,24 +6,21 @@ use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
 
-class ReplaceCommand extends Command
+class TeamInvitationCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'kui-jetstream:replace {stack : The development stack that should be replaced (livewire,inertia)}
-                            {--composer=global : Absolute path to the Composer binary which should be used to install packages}
-                            {--vite : Vitejs}
-                            {--teams : Indicates if team support should be replaced}';
+    protected $signature = 'kui-jetstream:invitation';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Replace laravel\\jetstream views.';
+    protected $description = 'Improving The Team Invitation Flow.';
 
     protected $isVite = false;
 
@@ -46,42 +43,11 @@ class ReplaceCommand extends Command
     {
         $this->writeLogo();
 
-        $this->replaceFavIcon();
-
-        if (file_exists(base_path('vite.config.js')) || $this->option('vite')) {
-            $this->isVite = true;
-        }
-
-        if ($this->argument('stack') === 'inertia') {
-            return $this->replaceInertia();
-        }
+        $this->replaceInertia();
     }
 
     public function replaceInertia()
     {
-
-        // Composer Packages...
-        // A package that adds view-composer like feature to Inertia.js Laravel adapter.
-        $this->requireComposerPackages('ambengers/kinetic:^1.8');
-        // NPM Packages...
-        $this->updateNodePackages(function ($packages) {
-            $extraPackages = [
-                '@heroicons/vue' => '^2.0.18',
-                '@headlessui/vue' => '^1.7.13',
-                '@vueuse/core' => '^6.5.3',
-                'perfect-scrollbar' => '^1.5.5',
-                'vue-sonner' => '0.3.1',
-            ] + $packages;
-
-            if (!$this->isVite) {
-                
-            } else {
-                $extraPackages += ['@vitejs/plugin-vue-jsx' => '^1.3.10'];
-            }
-
-            return $extraPackages + $packages;
-        });
-
         // Components + Pages...
         (new Filesystem)->ensureDirectoryExists(resource_path('js/Components'));
         (new Filesystem)->ensureDirectoryExists(resource_path('js/Composables'));
@@ -118,62 +84,6 @@ class ReplaceCommand extends Command
     }
 
     /**
-     * Installs the given Composer Packages into the application.
-     *
-     * @param  mixed  $packages
-     * @return void
-     */
-    protected function requireComposerPackages($packages)
-    {
-        $composer = $this->option('composer');
-
-        if ($composer !== 'global') {
-            $command = ['php', $composer, 'require'];
-        }
-
-        $command = array_merge(
-            $command ?? ['composer', 'require'],
-            is_array($packages) ? $packages : func_get_args()
-        );
-
-        (new Process($command, base_path(), ['COMPOSER_MEMORY_LIMIT' => '-1']))
-            ->setTimeout(null)
-            ->run(function ($type, $output) {
-                $this->output->write($output);
-            });
-    }
-
-    /**
-     * Update the "package.json" file.
-     *
-     * @param  callable  $callback
-     * @param  bool  $dev
-     * @return void
-     */
-    protected static function updateNodePackages(callable $callback, $dev = true)
-    {
-        if (!file_exists(base_path('package.json'))) {
-            return;
-        }
-
-        $configurationKey = $dev ? 'devDependencies' : 'dependencies';
-
-        $packages = json_decode(file_get_contents(base_path('package.json')), true);
-
-        $packages[$configurationKey] = $callback(
-            array_key_exists($configurationKey, $packages) ? $packages[$configurationKey] : [],
-            $configurationKey
-        );
-
-        ksort($packages[$configurationKey]);
-
-        file_put_contents(
-            base_path('package.json'),
-            json_encode($packages, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . PHP_EOL
-        );
-    }
-
-    /**
      * Replace a given string within a given file.
      *
      * @param  string  $search
@@ -184,12 +94,6 @@ class ReplaceCommand extends Command
     protected function replaceInFile($search, $replace, $path)
     {
         file_put_contents($path, str_replace($search, $replace, file_get_contents($path)));
-    }
-
-    protected function replaceFavIcon()
-    {
-        (new Filesystem)->ensureDirectoryExists(base_path('public'));
-        copy(__DIR__ . '/../../stubs/common/favicon.ico', base_path('public/favicon.ico'));
     }
 
     protected function writeLogo()

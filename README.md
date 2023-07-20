@@ -4,7 +4,12 @@ Different UI for [larave/jetstream](https://github.com/laravel/jetstream).
 
 [![License](https://img.shields.io/github/license/Kamona-WD/kui-laravel-jetstream)](https://github.com/Kamona-WD/kui-laravel-jetstream/blob/main/LICENSE.md)
 
-> Thanks to Kamona-WD for this great project. [Kamona-WD](https://github.com/Kamona-WD/kui-laravel-jetstream)
+> This project is a combining of great project from [Kamona-WD](https://github.com/Kamona-WD/kui-laravel-jetstream) and 
+Improving Team Invitation Flow by [Mario Giancini](https://mariogiancini.com/making-laravel-jetstream-team-invitations-better)
+
+<!-- > Thanks to Kamona-WD for this great project. [Kamona-WD](https://github.com/Kamona-WD/kui-laravel-jetstream) -->
+
+<!-- > Improving Team Invitation Flow by [Mario Giancini](https://mariogiancini.com/making-laravel-jetstream-team-invitations-better) -->
 
 > We recommend installing this package on a project that you are starting from scratch.
 
@@ -36,6 +41,11 @@ php artisan kui-jetstream:replace inertia --teams
 
 # then
 npm install && npm run dev # or yarn && yarn dev
+```
+
+```sh
+# (optional) To run team improvement flow.
+php artisan kui-jetstream:invitation
 ```
 
 4. Configure your database.

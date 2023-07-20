@@ -2,6 +2,14 @@
     <AuthenticationLayout title="Log in">
         <ValidationErrors class="mb-4" />
 
+        <div class="text-center mb-6" v-if="$page.props.flash?.teamInvitation">
+            <h4>
+                Log in or <a class="hover:text-purple-600" href="{{ route('register') }}">register</a>
+                to join <strong class="text-purple-500">{{ $page.props.flash.teamInvitation }}</strong>
+            </h4>
+        </div>
+        
+
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
         </div>
