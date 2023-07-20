@@ -4,10 +4,7 @@ Different UI for [larave/jetstream](https://github.com/laravel/jetstream).
 
 [![License](https://img.shields.io/github/license/Kamona-WD/kui-laravel-jetstream)](https://github.com/Kamona-WD/kui-laravel-jetstream/blob/main/LICENSE.md)
 
-> Thanks to Kamona-WD for this great project.
-#### [Kamona-WD](https://github.com/Kamona-WD/kui-laravel-jetstream)
-<!-- #### [Thanks to Kamona-WD for this great project](https://github.com/Kamona-WD/kui-laravel-jetstream) -->
-
+> Thanks to Kamona-WD for this great project. [Kamona-WD](https://github.com/Kamona-WD/kui-laravel-jetstream)
 
 > We recommend installing this package on a project that you are starting from scratch.
 
