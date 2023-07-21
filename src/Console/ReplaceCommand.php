@@ -70,7 +70,7 @@ class ReplaceCommand extends Command
                 '@headlessui/vue' => '^1.7.13',
                 '@vueuse/core' => '^6.5.3',
                 'perfect-scrollbar' => '^1.5.5',
-                'vue-sonner' => '0.3.1',
+                'vue-toastification' => '^2.0.0-rc.5'
             ] + $packages;
 
             if (!$this->isVite) {
@@ -89,28 +89,28 @@ class ReplaceCommand extends Command
         (new Filesystem)->ensureDirectoryExists(resource_path('js/Pages'));
         (new Filesystem)->ensureDirectoryExists(resource_path('js/Toast'));
 
-        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/inertia/js/Components', resource_path('js/Components'));
-        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/inertia/js/Composables', resource_path('js/Composables'));
-        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/inertia/js/Layouts', resource_path('js/Layouts'));
-        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/inertia/js/Pages', resource_path('js/Pages'));
-        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/inertia/js/Toast', resource_path('js/Toast'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/custom/inertia/js/Components', resource_path('js/Components'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/custom/inertia/js/Composables', resource_path('js/Composables'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/custom/inertia/js/Layouts', resource_path('js/Layouts'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/custom/inertia/js/Pages', resource_path('js/Pages'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/custom/inertia/js/Toast', resource_path('js/Toast'));
 
 
-        copy(__DIR__ . '/../../stubs/inertia/tailwind.config.js', base_path('tailwind.config.js'));
-        copy(__DIR__ . '/../../stubs/inertia/css/app.css', resource_path('css/app.css'));
+        copy(__DIR__ . '/../../stubs/custom/inertia/tailwind.config.js', base_path('tailwind.config.js'));
+        copy(__DIR__ . '/../../stubs/custom/inertia/css/app.css', resource_path('css/app.css'));
 
         if(!$this->isVite) {
             
         } else {
-            copy(__DIR__ . '/../../stubs/inertia/views/app.vite.blade.php', resource_path('views/app.blade.php'));
-            copy(__DIR__ . '/../../stubs/inertia/vite.config.js', base_path('vite.config.js'));
-            copy(__DIR__ . '/../../stubs/inertia/js/app.vite.js', resource_path('js/app.js'));
+            copy(__DIR__ . '/../../stubs/custom/inertia/views/app.vite.blade.php', resource_path('views/app.blade.php'));
+            copy(__DIR__ . '/../../stubs/custom/inertia/vite.config.js', base_path('vite.config.js'));
+            copy(__DIR__ . '/../../stubs/custom/inertia/js/app.vite.js', resource_path('js/app.js'));
             copy(__DIR__ . '/../../stubs/common/postcss.config.js', base_path('postcss.config.js'));
         }
 
         if($this->option('teams')) {
             (new Filesystem)->ensureDirectoryExists(resource_path('js/Pages/Teams'));
-            (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/inertia/js/Teams', resource_path('js/Pages/Teams'));
+            (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/custom/inertia/js/Teams', resource_path('js/Pages/Teams'));
         }
         
         $this->info('Jetstream ui scaffolding replaced successfully.');
