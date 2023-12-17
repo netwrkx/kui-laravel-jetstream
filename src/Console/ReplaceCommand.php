@@ -68,6 +68,7 @@ class ReplaceCommand extends Command
             $extraPackages = [
                 '@heroicons/vue' => '^2.0.18',
                 '@headlessui/vue' => '^1.7.13',
+                '@popperjs/core' => '^2.11.8',
                 '@vueuse/core' => '^6.5.3',
                 'perfect-scrollbar' => '^1.5.5',
                 'vue-toastification' => '^2.0.0-rc.5'
