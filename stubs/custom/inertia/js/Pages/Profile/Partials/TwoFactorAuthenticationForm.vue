@@ -1,5 +1,5 @@
 <template>
-    <ActionSection grid-class="" col-class="">
+    <ActionSection>
         <template #title>
             Two Factor Authentication
         </template>

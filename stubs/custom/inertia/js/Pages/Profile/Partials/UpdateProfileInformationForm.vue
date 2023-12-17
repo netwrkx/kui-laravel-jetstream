@@ -1,5 +1,5 @@
 <template>
-    <FormSection @submitted="updateProfileInformation" grid-class="" col-class="">
+    <FormSection @submitted="updateProfileInformation">
         <template #title>
             Profile Information
         </template>

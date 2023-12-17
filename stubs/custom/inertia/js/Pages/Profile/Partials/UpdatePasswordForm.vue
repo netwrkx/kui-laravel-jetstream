@@ -1,5 +1,5 @@
 <template>
-    <FormSection @submitted="updatePassword" grid-class="" col-class="">
+    <FormSection @submitted="updatePassword">
         <template #title>
             Update Password
         </template>
