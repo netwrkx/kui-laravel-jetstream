@@ -45,7 +45,7 @@ npm install && npm run dev # or yarn && yarn dev
 
 ```sh
 # (optional) To run team improvement flow.
-php artisan kui-jetstream:invitation
+php artisan kui-jetstream:invitation mariogiancini
 ```
 
 4. Configure your database.
