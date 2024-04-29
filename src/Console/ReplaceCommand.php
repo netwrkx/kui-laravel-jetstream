@@ -59,17 +59,13 @@ class ReplaceCommand extends Command
 
     public function replaceInertia()
     {
-
-        // Composer Packages...
-        // A package that adds view-composer like feature to Inertia.js Laravel adapter.
-        $this->requireComposerPackages('ambengers/kinetic:^1.8');
         // NPM Packages...
         $this->updateNodePackages(function ($packages) {
             $extraPackages = [
-                '@heroicons/vue' => '^2.0.18',
-                '@headlessui/vue' => '^1.7.13',
+                '@heroicons/vue' => '^2.1.3',
+                '@headlessui/vue' => '^1.7.21',
                 '@popperjs/core' => '^2.11.8',
-                '@vueuse/core' => '^6.5.3',
+                '@vueuse/core' => '^10.9.0',
                 'perfect-scrollbar' => '^1.5.5',
                 'vue-toastification' => '^2.0.0-rc.5'
             ] + $packages;
@@ -77,7 +73,7 @@ class ReplaceCommand extends Command
             if (!$this->isVite) {
                 
             } else {
-                $extraPackages += ['@vitejs/plugin-vue-jsx' => '^1.3.10'];
+                $extraPackages += ['@vitejs/plugin-vue-jsx' => '^3.1.0'];
             }
 
             return $extraPackages + $packages;

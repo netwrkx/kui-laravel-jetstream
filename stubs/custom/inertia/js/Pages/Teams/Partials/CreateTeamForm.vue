@@ -1,5 +1,5 @@
 <template>
-    <FormSection @submitted="createTeam" grid-class="" col-class="">
+    <FormSection @submitted="createTeam">
         <template #title>
             Team Details
         </template>

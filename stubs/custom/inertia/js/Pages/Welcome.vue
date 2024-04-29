@@ -16,35 +16,38 @@ defineProps({
     <Head title="Welcome" />
 
     <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-        <div v-if="canLogin" class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
-            <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</Link>
+        <div class="sm:fixed sm:top-0 p-6 inset-x-0 flex items-center justify-between">
+            <div class="text-left">
+                <Button
+                    iconOnly
+                    variant="secondary"
+                    type="button"
+                    @click="toggleDarkMode(!isDark)"
+                    v-slot="{ iconSizeClasses }"
+                    class="md:inline-flex ml-4 align-sub"
+                    srText="Toggle dark mode"
+                >
+                    <MoonIcon
+                        v-show="!isDark"
+                        aria-hidden="true"
+                        :class="iconSizeClasses"
+                    />
+                    <SunIcon
+                        v-show="isDark"
+                        aria-hidden="true"
+                        :class="iconSizeClasses"
+                    />
+                </Button>
+            </div>
+            <div v-if="canLogin" class="text-right">
+                <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</Link>
 
-            <template v-else>
-                <Link :href="route('login')" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</Link>
+                <template v-else>
+                    <Link :href="route('login')" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</Link>
 
-                <Link v-if="canRegister" :href="route('register')" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</Link>
-            </template>
-
-            <Button
-                iconOnly
-                variant="secondary"
-                type="button"
-                @click="toggleDarkMode"
-                v-slot="{ iconSizeClasses }"
-                class="hidden md:inline-flex ml-4 align-sub"
-                srText="Toggle dark mode"
-            >
-                <MoonIcon
-                    v-show="!isDark"
-                    aria-hidden="true"
-                    :class="iconSizeClasses"
-                />
-                <SunIcon
-                    v-show="isDark"
-                    aria-hidden="true"
-                    :class="iconSizeClasses"
-                />
-            </Button>
+                    <Link v-if="canRegister" :href="route('register')" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</Link>
+                </template>
+            </div>
         </div>
 
         <div class="max-w-7xl mx-auto p-6 lg:p-8">

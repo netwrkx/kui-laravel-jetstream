@@ -9,7 +9,6 @@ class KUIJetstreamServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        // $this->app->router->aliasMiddleware('auth', HandleTeamInvitationRequests::class);
         $this->app->router->pushMiddlewareToGroup('web', HandleTeamInvitationRequests::class);
 
         if (!$this->app->runningInConsole()) {

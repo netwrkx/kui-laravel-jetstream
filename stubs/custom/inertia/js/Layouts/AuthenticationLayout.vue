@@ -21,7 +21,7 @@
                 iconOnly
                 variant="secondary"
                 type="button"
-                @click="toggleDarkMode"
+                @click="toggleDarkMode(!isDark)"
                 v-slot="{ iconSizeClasses }"
                 class="hidden md:inline-flex"
                 srText="Toggle dark mode"

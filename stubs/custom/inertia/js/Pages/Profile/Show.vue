@@ -1,16 +1,16 @@
 <template>
     <AppLayout title="Profile">
 		<template #subheader>
-			<div
-				class="border-t border-gray-300 dark:border-gray-600 w-full p-4 px-4 mx-auto sm:px-6 lg:px-8 bg-white shadow-lg dark:bg-dark-eval-1 shadow-md">
-				<div
-					class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 flex flex-row justify-between md:space-y-0">
-					<div class="flex items-center">
-						<h2 class="text-xl font-semibold leading-tight">
-							Profile Settings
-						</h2>
-					</div>
-				</div>
+			<div class="border-t border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-eval-1 shadow-md">
+                <div class="p-4 mx-auto max-w-7xl sm:p-6 lg:p-8">
+                    <div class="flex flex-row justify-between md:space-y-0">
+                        <div class="flex items-center">
+                            <h2 class="text-xl font-semibold leading-tight">
+                                Profile Settings
+                            </h2>
+                        </div>
+                    </div>
+                </div>
 			</div>
         </template>
 

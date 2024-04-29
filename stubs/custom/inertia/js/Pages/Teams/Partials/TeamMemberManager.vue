@@ -2,7 +2,7 @@
     <div>
         <div v-if="userPermissions.canAddTeamMembers">
             <!-- Add Team Member -->
-            <FormSection @submitted="addTeamMember" grid-class="" col-class="">
+            <FormSection @submitted="addTeamMember">
                 <template #title>
                     Add Team Member
                 </template>
