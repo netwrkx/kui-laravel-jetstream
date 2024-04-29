@@ -1,9 +1,17 @@
 <template>
     <AppLayout title="API Tokens">
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-200">
-                API Tokens
-            </h2>
+		<template #subheader>
+			<div class="border-t border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-eval-1 shadow-md">
+                <div class="p-4 mx-auto max-w-7xl sm:p-6 lg:p-8">
+                    <div class="flex flex-row justify-between md:space-y-0">
+                        <div class="flex items-center">
+                            <h2 class="text-xl font-semibold leading-tight">
+                                API Tokens
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+			</div>
         </template>
 
         <ApiTokenManager :tokens="tokens"
