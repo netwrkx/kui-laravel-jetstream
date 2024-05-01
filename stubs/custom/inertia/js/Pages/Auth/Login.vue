@@ -54,7 +54,7 @@
                     </Button>
                 </div>
 
-                <p class="text-sm text-gray-600 dark:text-gray-400" v-if="!$page.props.flash?.teamInvitation">
+                <p class="text-center text-sm text-gray-600 dark:text-gray-400" v-if="!$page.props.flash?.teamInvitation">
                     Don't have an account?
                     <Link :href="route('register')" class="text-blue-500 hover:underline">
                         Register

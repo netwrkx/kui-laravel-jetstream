@@ -70,7 +70,7 @@
                     </Button>
                 </div>
 
-                <p class="text-sm text-gray-600 dark:text-gray-400" v-if="!$page.props.flash?.teamInvitation">
+                <p class="text-center text-sm text-gray-600 dark:text-gray-400" v-if="!$page.props.flash?.teamInvitation">
                     Already have an account?
                     <Link :href="route('login')" class="text-blue-500 hover:underline">
                         Login
