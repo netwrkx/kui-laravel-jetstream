@@ -10,7 +10,7 @@
 
         <template #form>
             <!-- Profile Photo -->
-            <div v-if="$page.props.jetstream.managesProfilePhotos" class="col-span-6 sm:col-span-4">
+            <div v-if="$page.props.jetstream.managesProfilePhotos" class="col-span-6 sm:col-span-6">
                 <!-- Profile Photo File Input -->
                 <input 
                     ref="photoInput"
@@ -57,7 +57,7 @@
             </div>
 
             <!-- Name -->
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6 sm:col-span-6">
                 <Label for="name" value="Name" />
 
                 <Input id="name" type="text" class="mt-1 block w-full" v-model="form.name" autocomplete="name" />
@@ -66,7 +66,7 @@
             </div>
 
             <!-- Email -->
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6 sm:col-span-6">
                 <Label for="email" value="Email" />
 
                 <Input id="email" type="email" class="mt-1 block w-full" v-model="form.email" />

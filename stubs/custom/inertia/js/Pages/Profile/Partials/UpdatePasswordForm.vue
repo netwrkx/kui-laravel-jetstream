@@ -9,19 +9,19 @@
         </template>
 
         <template #form>
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6 sm:col-span-6">
                 <Label for="current_password" value="Current Password" />
                 <Input id="current_password" ref="currentPasswordInput" type="password" class="mt-1 block w-full" v-model="form.current_password" autocomplete="current-password" />
                 <InputError :message="form.errors.current_password" class="mt-2" />
             </div>
 
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6 sm:col-span-6">
                 <Label for="password" value="New Password" />
                 <Input id="password" ref="passwordInput" type="password" class="mt-1 block w-full" v-model="form.password" autocomplete="new-password" />
                 <InputError :message="form.errors.password" class="mt-2" />
             </div>
 
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6 sm:col-span-6">
                 <Label for="password_confirmation" value="Confirm Password" />
                 <Input id="password_confirmation" type="password" class="mt-1 block w-full" v-model="form.password_confirmation" autocomplete="new-password" />
                 <InputError :message="form.errors.password_confirmation" class="mt-2" />
